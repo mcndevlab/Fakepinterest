@@ -8,6 +8,13 @@ import os
 
 #cria nosso APP
 app = Flask(__name__)
+
+#implementar uma conexão com BD qdo disponivel e uma opção qdo offline:
+#if os.getenv("DEBUG") == 0:
+#    link_banco = os.getenv("DATABASE_URL")
+#else:
+#    link_banco = 'sqlite:///comunidade.db'
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///comunidade.db' #aula 43.9
 app.config['SECRET_KEY'] = "fb20b75fd1c781bddbf676256743b7bd" #aula 43.10
 app.config["UPLOAD_FOLDER"] = "static/fotos_posts"
