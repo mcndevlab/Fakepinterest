@@ -1,3 +1,5 @@
+import sys
+sys.path.append(".venv")
 
 from fakepinterest import app
 
