@@ -1,10 +1,10 @@
-# criar as rotas do nosso site (os links)
+#CRIAR OS LINKS - ROTAS DO SITE
 from flask import render_template, url_for, redirect
 from fakepinterest import app, database, bcrypt
 from fakepinterest.models import Usuario, Foto
-from flask_login import login_required, login_user, logout_user, current_user
 from fakepinterest.forms import FormLogin, FormCriarConta, FormFoto
-from werkzeug.utils import secure_filename #biblioteca para alterar o nome dos arquibvos upload das fotos para um nome seguro que não de erros
+from flask_login import login_required, login_user, current_user, logout_user
+from werkzeug.utils import secure_filename
 import os
 
 @app.route("/", methods=["GET", "POST"])

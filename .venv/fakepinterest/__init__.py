@@ -4,6 +4,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager #aula 43.10
 from flask_bcrypt import Bcrypt #aula 43.10
+from flask_login import login_user
 import os
 
 #cria nosso APP
