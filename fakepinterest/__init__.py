@@ -16,7 +16,11 @@ app = Flask(__name__)
 #else:
 #    link_banco = 'sqlite:///comunidade.db'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///comunidade.db' #aula 43.9
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///comunidade.db' #aula 43.9
+#o código acima fica como está para uso direto no desktopo com BD local e passa para o código abaixo para
+#usar BD online..
+
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 app.config['SECRET_KEY'] = "fb20b75fd1c781bddbf676256743b7bd" #aula 43.10
 app.config["UPLOAD_FOLDER"] = "static/fotos_posts"
 
