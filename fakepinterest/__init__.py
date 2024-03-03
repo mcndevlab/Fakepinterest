@@ -20,7 +20,9 @@ app = Flask(__name__)
 #o código acima fica como está para uso direto no desktopo com BD local e passa para o código abaixo para
 #usar BD online..
 
+#app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://banco_fakepinterest_usi4_user:lR0MJDNrG5k0cX2HJb5hAlxIZ393HvbU@dpg-cnhtft8l6cac7394k5k0-a.oregon-postgres.render.com/banco_fakepinterest_usi4"
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
+
 app.config['SECRET_KEY'] = "fb20b75fd1c781bddbf676256743b7bd" #aula 43.10
 app.config["UPLOAD_FOLDER"] = "static/fotos_posts"
 
