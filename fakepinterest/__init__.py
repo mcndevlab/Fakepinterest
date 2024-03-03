@@ -4,7 +4,6 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager #aula 43.10
 from flask_bcrypt import Bcrypt #aula 43.10
-from flask_login import login_user
 import os
 
 #cria nosso APP
@@ -16,11 +15,13 @@ app = Flask(__name__)
 #else:
 #    link_banco = 'sqlite:///comunidade.db'
 
+#código abaixo para funcionar com o BD no desktop / Local
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///comunidade.db' #aula 43.9
-#o código acima fica como está para uso direto no desktopo com BD local e passa para o código abaixo para
-#usar BD online..
 
+#código abaixo para criar as tabelas usuarios e fotos no BD online
 #app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://banco_fakepinterest_usi4_user:lR0MJDNrG5k0cX2HJb5hAlxIZ393HvbU@dpg-cnhtft8l6cac7394k5k0-a.oregon-postgres.render.com/banco_fakepinterest_usi4"
+
+#código abaixo para funcionar com o BD online
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 
 app.config['SECRET_KEY'] = "fb20b75fd1c781bddbf676256743b7bd" #aula 43.10
