@@ -22,7 +22,7 @@ def homepage():
 def criar_conta():
     form_criarconta = FormCriarConta()
     if form_criarconta.validate_on_submit():
-        senha = bcrypt.generate_password_hash(form_criarconta.senha.data.decode('utf-8'))
+        senha = bcrypt.generate_password_hash(form_criarconta.senha.data).decode('utf-8')
         usuario = Usuario(username=form_criarconta.username.data,
                           senha=senha, email=form_criarconta.email.data)
         database.session.add(usuario)
